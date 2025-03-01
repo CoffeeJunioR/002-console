@@ -1,20 +1,52 @@
 <?php
-echo "Введите делимое: ";
-$enteredNumbers1 = fgets(STDIN);
-$divisible = trim($enteredNumbers1); //Делимое
+echo "Task 2\n";
 
-echo "Введите делитель: ";
-$enteredNumbers2 = fgets(STDIN);
-$divider = trim($enteredNumbers2); //Делитель
+$a='Рыба';
+$b='человек';
 
-if ($divider === "0") {//проверяем, что делитель не равен "0"
-    echo "Делить на ноль нельзя" . PHP_EOL;
+echo "$a рыбою сыта, а $b человеком\n";
+echo "### ###\n";
+echo "\n";
+
+echo "Task 3\n";
+$variable = 3.14;
+
+if (is_bool($variable)) {
+    $type = 'bool';
+} elseif (is_float($variable)) {
+    $type = 'float';
+} elseif (is_int($variable)) {
+    $type = 'int';
+} elseif (is_string($variable)) {
+    $type = 'string';
+} elseif (is_null($variable)) {
+    $type = 'null';
 } else {
-    $divisible = intval($divisible); 
-    $divider = intval($divider);
-    if ($divisible === 0 || $divider === 0) { // проверяем что, введенные числа преобразовались в integer 
-        echo "Введите пожалуйсто, число" . PHP_EOL;
-    } else {
-        echo "Результат: " .  $divisible / $divider . PHP_EOL;
-    }
+    $type = 'other';
 }
+
+echo "type is $type\n";
+echo "### ###\n";
+echo "\n";
+
+echo "Task 4\n";
+
+echo "Этот файл: " . __FILE__ . "\n";
+echo "Эта строка: " . __LINE__ . "\n";
+
+echo "### ###\n";
+echo "\n";
+
+echo "Task 5\n";
+
+$heredoc_string = <<<EOT
+Это
+многострочная строка,
+созданная с использованием синтаксиса heredoc.
+Она может содержать переменные $a and $b.
+EOT;
+
+echo $heredoc_string;
+
+echo "### ###\n";
+?>
